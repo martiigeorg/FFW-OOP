@@ -1,0 +1,60 @@
+<?php
+abstract class Vehicle
+{
+	private $brand;
+	private $model;
+	private $price;
+	function getBrand();
+	function getModel();
+	function getPrice();
+	abstract function startEngine();
+	abstract function stopEngine();
+	abstract function printData();
+}
+class Car extends Vehicle 
+{
+	private $horsePower;
+	private $weight;
+	private $color;
+	function startEngine()
+	{
+		echo "The engine of the car is started"/n;
+	}
+	function stopEngine()
+	{
+		echo "The engine of the car is stopped"/n;
+	}
+	function getHorsePower();
+	function getWeight();
+	function getColor();
+	function __construct($horsePower, $weight,$color)
+	{
+		$this->horsePower=$horsePower;
+		$this->weight=$weight;
+		$this->color=$color;
+	}
+		
+	public function printInfo()
+	{
+		echo $this->horsePower." ".$this->color;
+	}
+}	
+class Bus extends Vehicle 
+{
+	$seats;
+	$disableP;
+	$total;
+	function getNumberOfSeats();
+	function getNumberOfDisablePeopleSeats();
+	function getTotalCapacity();
+	function __construct($seats, $disableP, $tatal)
+	{
+		$this->seats=$seats;
+		$this->disableP=$disableP;
+		$this->total=$total;
+	}	
+}	
+$objC=new Car(120, 1000, "blue");
+$objC->printInfo();
+
+?>
